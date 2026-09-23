@@ -13,3 +13,7 @@ const timeText = document.getElementById('timeDisplay');
 box.addEventListener('mouseenter', () => {
     timeText.style.opacity = '0.25';
 });
+
+box.addEventListener('mouseleave', () => {
+    timeText.style.opacity = '0';
+});
