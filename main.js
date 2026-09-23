@@ -31,3 +31,20 @@ function getColorForHour(hour) {
         return '#0B1026'; // night
     }
 }
+function updateDayNight() {
+    const hour = new Date().getHours();
+    const section = document.getElementById('dayNightSection');
+    section.style.backgroundColor = getColorForHour(hour);
+}
+updateDayNight();
+setInterval(updateDayNight, 60000);
+
+const slider = document.getElementById('hourSlider');
+const sliderLabel = document.getElementById('hourLabel');
+const section = document.getElementById('dayNightSection');
+
+slider.addEventListener('input', () => {
+    const hour = parseInt(slider.value, 10);
+    section.style.backgroundColor = getColorForHour(hour);
+    sliderLabel.textContent = `${String(hour).padStart(2, '0')}:00`;
+});
