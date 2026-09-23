@@ -4,3 +4,8 @@ function updateTime() {
     const minutes = String(now.getMinutes()).padStart(2, '0');
     document.getElementById('timeDisplay').textContent = `${hours}:${minutes}`;
 }
+updateTime();
+setInterval(updateTime, 1000);
+
+const box = document.querySelector('.time-reveal-section');
+const timeText = document.getElementById('timeDisplay');
